@@ -13,8 +13,8 @@ myDict = {
     "roll no.": "33"
 }
 
-key = input("Enter key : ").strip()
-value = input("Enter value : ").strip()
+key = input("Enter key : ")
+value = input("Enter value : ")
 
 updateDict(myDict, key, value)
 print(myDict)
