@@ -19,6 +19,7 @@ def get_data(format = "dict"):
     with open("employee_data.csv", "r") as f: 
         data = csv.reader(f)
         fields = next(data)
+
         rows = []
 
         for row in data: 
@@ -53,11 +54,22 @@ def get_employee_data(empid):
         return 
 
 def print_records(): 
-    fields, rows = get_data(format = "list")
-    print(fields)
+    fields, rows = get_data()
+
+    print("="*(15 * len(fields) + len(fields)))
+
+    for field_name in fields: 
+        print("{:^15}".format(field_name), end = "|")
+
+    print()
+    print("="*(15 * len(fields) + len(fields)))
 
     for row in rows: 
-        print(row)
+        for entry in row: 
+            print("{:^15}".format(entry), end = "|")
+
+        print()
+        print("-"*(15 * len(row) + len(row)))
 
 print("Type 1 to create a csv file.")
 print("Type 2 insert a row in csv file.")
